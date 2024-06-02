@@ -7,7 +7,7 @@ Implementing a recommender system with LLM
 进入web模块，直接访问页面
  - 推荐服务冷启动：在没有用户数据情况下，我们基于 欧几里得距离 的相识度推荐算法，
 案例用户输入一个书名，推荐用户可能喜欢的书籍，效果
-![](Web/1.png)
+![](Docs/1.png)
 
 - 推荐服务热启动
 
@@ -24,9 +24,14 @@ Implementing a recommender system with LLM
 | E | 0.94 | 0.75 | 0.61 | 0.82 | 1.00 |          |          |
 | F | 0.83 |          | 0.69 | 0.85 | 0.79 | 1.00 | 0.65 |
 | G | 0.50 | 0.62 | 0.80 |        | 0.56 |        | 1.00 |
-```xml
+```
+![](Docs/3.png)
 
-![](Web/2.png)
+  基于用户历史订单推荐商品
+  在提供用户订单数据情况下，我们格式化订单和优化Prompt，基于 协同过滤 推荐算法，推荐复购率高的商品给客户
+  案例：假设我们有用户的购买订单表，推荐给每个用户没买过的商品，效果
+
+![](Docs/2.png)
 
 
 ### Java Backend API
@@ -63,9 +68,9 @@ async def chat(item: Item):
     # 打印 JSON 字符串
     print(re.__dict__)
     return re
- ```python
+ ```
   - Web API 用的是Python 的 Fastapi，不用手动启动uvicorn，直接IDE运行程序
  ```python
  if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8080, log_level="info")
- ```python
+ ```

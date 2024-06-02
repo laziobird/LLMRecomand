@@ -2,7 +2,7 @@
 Implementing a recommender system with LLM
 
 ## Project Description
-通过访问Restful 服务访问 Gemini AI，运行开发好的AI聊天小助手
+通过访问Restful 服务访问 Gemini AI，运行 AI推荐小助手
 ### Front-end project
 进入web模块，直接访问页面
  - 推荐服务冷启动

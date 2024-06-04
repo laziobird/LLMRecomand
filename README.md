@@ -38,6 +38,22 @@ Implementing a recommender system with LLM
 
 
 ### Java Backend API
+ - 运行项目：用的是Springboot3，JDK17。你可以在 POM.XML 按自己环境配置。
+```java
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.7</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+```
+   直接在IDE或Java运行打好的Jar包
+ ```cmd
+mvn -Dmaven.test.skip=true package
+```
  - Constant.java 中设置好Google Gemini API KEY
 ```java
     /**
